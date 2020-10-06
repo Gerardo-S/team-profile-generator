@@ -10,7 +10,153 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+function initManager(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is your Manager's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your Manager's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your Manager's email?"
+        },
+        {
+            type: "input",
+            name: "officeNumber",
+            message: "What is your Manager's office number?"
+        },
+        {
+            type: "list",
+            message: "Which typeof team member would you like to add?",
+            name: "teamMember",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I do not want to add any more team members."
+                
+            ]
+        }
 
+    ]).then(function(managerInput){
+        console.log(managerInput);
+        if (managerInput.teamMember == "Engineer"){
+            addEngineer();
+        }
+        else if(managerInput.teamMember == "Intern"){
+            addIntern();
+
+        }
+        else{
+            process.exit(0);
+        }
+    });
+};
+initManager();
+
+function addEngineer(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is your Engineer's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your Engineer's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your Engineer's email?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is your Engineer's Github username?"
+        },
+        {
+            type: "list",
+            message: "Which typeof team member would you like to add?",
+            name: "teamMember",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I do not want to add any more team members."
+            ]
+        }
+
+    ]).then(function(engineerInfo){
+        console.log(engineerInfo);
+
+        if (engineerInfo.teamMember == "Engineer"){
+            addEngineer();
+        }
+        else if(engineerInfo.teamMember == "Intern"){
+            addIntern();
+
+        }
+        else{
+            process.exit(0);
+        }
+    });
+};
+
+function addIntern(){
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is your Intern's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your Intern's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your Intern's email?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What is your Intern's school?"
+        },
+        {
+            type: "list",
+            message: "Which typeof team member would you like to add?",
+            name: "teamMember",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I do not want to add any more team members."
+            ]
+        }
+
+    ]).then(function(internInfo){
+        console.log(internInfo);
+
+        if (internInfo.teamMember == "Engineer"){
+            addEngineer();
+        }
+        else if(internInfo.teamMember == "Intern"){
+            addIntern();
+
+        }
+        else{
+            process.exit(0);
+        }
+    });
+};
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
