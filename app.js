@@ -46,6 +46,8 @@ function initManager(){
 
     ]).then(function(managerInput){
         console.log(managerInput);
+        const manager = new Manager(managerInput.name,managerInput.id,managerInput.email,managerInput.officeNumber);
+        console.log(manager);
         if (managerInput.teamMember == "Engineer"){
             addEngineer();
         }
@@ -54,7 +56,7 @@ function initManager(){
 
         }
         else{
-            process.exit(0);
+            render(manager);
         }
     });
 };
@@ -104,7 +106,7 @@ function addEngineer(){
 
         }
         else{
-            process.exit(0);
+            render();
         }
     });
 };
@@ -153,7 +155,7 @@ function addIntern(){
 
         }
         else{
-            process.exit(0);
+            render();
         }
     });
 };
