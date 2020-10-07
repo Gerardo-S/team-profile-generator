@@ -10,11 +10,21 @@ This app is a Node CLI that generates an HTML webpage displaying summaries for t
 ````node app.js````
 then follow command prompts with necessary responses as shown in the animated gif below. 
 
+### Generating Manager Profile
+<img src="Assets\Images\Manager.gif" alt="Generated Manager Profile">
 
+### Generating Engineer Profile
+<img src="Assets\Images\Engineer.gif" alt="Generated Engineer Profile">
+
+### Generating Intern Profile
+<img src="Assets\Images\Intern.gif" alt="Generated Intern Profile">
 
 ### Webpage Image
 <img src="Assets\Images\generatedTeam.PNG" alt="Generated Webpage">
 
-Links:
+## Tests
+Tests using jest were used to provide a TDD approach to application. To conduct test run ````npm install jest````. Open profile tests located in test folder and run ````npm run test````.
+
+### Links:
 <a href="https://drive.google.com/file/d/1liXLyua2taILBlnrcB2dyFYafmFHDlmL/view">Click here for a video walk through</a><br>
-Repo: <a href=""> </a><br>
+Repo: <a href="https://github.com/Gerardo-S/team-profile-generator">https://github.com/Gerardo-S/team-profile-generator </a><br>
